@@ -2,6 +2,7 @@ package primul_exercitiu.ExercituiLaptop.rest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,8 +28,20 @@ public class LaptopController {
         return "Brand: " + brand +
                 "Model: " + model +
                 "RAM: " + ram +
-                "Processor: " + processor;
-
-
+          "Processor: " + processor;
     }
+    @PutMapping("/laptop")
+    public String setLaptop() {
+        brand = "HP";
+        model = "EliteBook";
+        ram = "32GB";
+        processor = "Intel Core i7";
+
+        return "Laptopul a fost actualizat!";
+    }
+
+
+
+
+
 }
